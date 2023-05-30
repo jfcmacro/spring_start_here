@@ -1,9 +1,11 @@
 package org.jfcmc.sprstahere.chap04.proxies;
 
 import org.jfcmc.sprstahere.chap04.model.Comment;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+@Qualifier("EMAIL")
 public class EmailCommentNotificationProxy implements CommentNotificationProxy {
 
   @Override

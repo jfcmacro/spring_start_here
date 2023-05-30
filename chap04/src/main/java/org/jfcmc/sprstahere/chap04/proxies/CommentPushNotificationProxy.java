@@ -1,11 +1,11 @@
 package org.jfcmc.sprstahere.chap04.proxies;
 
 import org.jfcmc.sprstahere.chap04.model.Comment;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import org.springframework.context.annotation.Primary;
 
 @Component
-@Primary
+@Qualifier("PUSH")
 public class CommentPushNotificationProxy implements CommentNotificationProxy {
 
   @Override
