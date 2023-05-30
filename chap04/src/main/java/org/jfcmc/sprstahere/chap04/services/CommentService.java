@@ -3,7 +3,9 @@ package org.jfcmc.sprstahere.chap04.services;
 import org.jfcmc.sprstahere.chap04.model.Comment;
 import org.jfcmc.sprstahere.chap04.proxies.CommentNotificationProxy;
 import org.jfcmc.sprstahere.chap04.repositories.CommentRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CommentService {
 
     private final CommentRepository commentRepository;

@@ -1,7 +1,9 @@
 package org.jfcmc.sprstahere.chap04.repositories;
 
 import org.jfcmc.sprstahere.chap04.model.Comment;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DBCommentRepository implements CommentRepository {
 
   @Override
