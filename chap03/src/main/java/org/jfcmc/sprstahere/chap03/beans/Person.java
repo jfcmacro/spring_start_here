@@ -1,9 +1,17 @@
 package org.jfcmc.sprstahere.chap03.beans;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Person {
 
-    private String name;
-    private Parrot parrot;
+    private String name = "Ella";
+
+    private final Parrot parrot;
+
+    public Person(Parrot parrot2) {
+        this.parrot = parrot2;
+    }
 
     public String getName() {
         return name;
@@ -15,9 +23,5 @@ public class Person {
 
     public Parrot getParrot() {
         return parrot;
-    }
-
-    public void setParrot(Parrot parrot) {
-        this.parrot = parrot;
     }
 }
