@@ -1,14 +1,11 @@
 package org.jfcmc.sprstahere.chap05.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.jfcmc.sprstahere.chap05.services.CommentService;
+import org.springframework.context.annotation.ComponentScan;
 
 @Configuration
+@ComponentScan(basePackages = {
+        "org.jfcmc.sprstahere.chap05.services",
+        "org.jfcmc.sprstahere.chap05.repositories"})
 public class ProjectConfig {
-
-  @Bean
-  public CommentService commentService() {
-    return new CommentService();
-  }
 }

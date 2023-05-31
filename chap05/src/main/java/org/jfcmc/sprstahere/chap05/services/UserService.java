@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.jfcmc.sprstahere.chap05.repositories.CommentRepository;
 
 @Service
-public class CommentService {
+public class UserService {
     @Autowired
     private CommentRepository commentRepository;
 
