@@ -5,7 +5,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @Configuration
 @ComponentScan(basePackages = {
-        "org.jfcmc.sprstahere.chap05.services",
-        "org.jfcmc.sprstahere.chap05.repositories"})
+        "org.jfcmc.sprstahere.chap05.services"})
 public class ProjectConfig {
 }
