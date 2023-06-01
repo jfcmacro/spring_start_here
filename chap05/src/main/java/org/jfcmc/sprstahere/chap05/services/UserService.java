@@ -1,11 +1,13 @@
 package org.jfcmc.sprstahere.chap05.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import org.jfcmc.sprstahere.chap05.repositories.CommentRepository;
 
 @Service
-public class CommentService {
+public class UserService {
 
   @Autowired
   private CommentRepository commentRepository;
