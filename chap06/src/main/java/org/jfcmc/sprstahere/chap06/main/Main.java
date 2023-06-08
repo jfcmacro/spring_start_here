@@ -5,11 +5,7 @@ import org.jfcmc.sprstahere.chap06.model.Comment;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.jfcmc.sprstahere.chap06.services.CommentService;
 
-import java.util.logging.Logger;
-
 public class Main {
-
-  private static Logger logger = Logger.getLogger(Main.class.getName());
 
   public static void main(String[] args) {
     var c = new AnnotationConfigApplicationContext(ProjectConfig.class);
@@ -20,9 +16,8 @@ public class Main {
     comment.setText("Demo comment");
     comment.setAuthor("Natasha");
 
-
-    String returnedValue = service.publishComment(comment);
-
-    logger.info(returnedValue);
+    service.publishComment(comment);
+    service.deleteComment(comment);
+    service.editComment(comment);
   }
 }
