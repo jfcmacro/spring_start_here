@@ -1,5 +1,6 @@
 package org.jfcmc.sprstahere.chap06.aspects;
 
+import org.jfcmc.sprstahere.chap06.model.Comment;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -17,15 +18,21 @@ public class LoggingAspect {
     String methodName = joinPoint.getSignature().getName();
     Object [] arguments = joinPoint.getArgs();
 
+
     logger.info("Method " + methodName +
         " with parameters " + Arrays.asList(arguments) +
         " will execute");
 
-    Object returnedByMethod = joinPoint.proceed();
+    Comment comment = new Comment();
+    comment.setAuthor("Jenny");
+    comment.setText("Some other text!");
+    Object [] newArguments = {comment};
+
+    Object returnedByMethod = joinPoint.proceed(newArguments);
 
     logger.info("Method executed and returned " + returnedByMethod);
 
-    return returnedByMethod;
+    return "FAILED";
   }
 
   public void setLogger(Logger logger) {
