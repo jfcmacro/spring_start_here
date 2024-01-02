@@ -16,12 +16,15 @@ public class CommentService {
     }
 
     @ToLog
-    public void deleteComment(Comment comment) {
+    public Comment deleteComment(Comment comment) {
 	logger.info("Deleting comment:" + comment.getText());
+	return comment;
     }
 
-    public void editComment(Comment comment) {
+    @ToLog
+    public String editComment(Comment comment) {
 	logger.info("Editing comment:" + comment.getText());
+	return "Edited";
     }
  
     public void setLogger(Logger logger) {
