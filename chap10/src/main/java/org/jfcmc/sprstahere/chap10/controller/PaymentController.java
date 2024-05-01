@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.jfcmc.sprstahere.chap10.model.PaymentDetails;
 import org.jfcmc.sprstahere.chap10.service.PaymentService;
-import org.jfcmc.sprstahere.chap10.util.ErrorDetails;
-import org.jfcmc.sprstahere.chap10.util.NotEnoughMoneyException;
+// import org.jfcmc.sprstahere.chap10.util.ErrorDetails;
 
 @RestController
 public class PaymentController {
@@ -20,20 +19,11 @@ public class PaymentController {
     }
 
     @PostMapping("/payment")
-    public ResponseEntity<?> makePayment() {
-	try {
-	    PaymentDetails paymentDetails =
-		paymentService.processPayment();
-	    return ResponseEntity
-		.status(HttpStatus.ACCEPTED)
-		.body(paymentDetails);
-	}
-	catch (NotEnoughMoneyException e) {
-	    ErrorDetails errorDetails = new ErrorDetails();
-	    errorDetails.setMessage("Not enough money to make the payment");
-	    return ResponseEntity
-		.badRequest()
-		.body(errorDetails);
-	}
+    public ResponseEntity<PaymentDetails> makePayment() {
+	PaymentDetails paymentDetails =
+	    paymentService.processPayment();
+	return ResponseEntity
+	    .status(HttpStatus.ACCEPTED)
+	    .body(paymentDetails);
     }
 }
