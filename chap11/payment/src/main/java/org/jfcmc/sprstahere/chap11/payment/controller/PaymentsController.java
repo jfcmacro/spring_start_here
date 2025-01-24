@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.jfcmc.sprstahere.chap11.payment.model.Payment;
 import org.jfcmc.sprstahere.chap11.payment.proxy.PaymentsProxy;
-import java.util.UUID;
 
 @RestController
 public class PaymentsController {
@@ -18,8 +17,6 @@ public class PaymentsController {
 
     @PostMapping("/payment")
     public Payment createPayment(@RequestBody Payment payment) {
-        String requestId = UUID.randomUUID().toString();
-        return paymentsProxy.createPayment(requestId, payment);
-        // return payment;
+        return paymentsProxy.createPayment(payment);
     }
 }
